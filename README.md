@@ -1,6 +1,14 @@
-# fullstack-exercise-1
+# Fullstack Developer Challenge: TaskBoard – Kanban Project Management
 
-A fullstack application with a Python/FastAPI backend and Next.js frontend.
+## Overview
+This is a timed coding exercise to evaluate your ability to build a fullstack application matching the provided design. Your task is to replicate the **TaskBoard** project management interface shown in `implementation.png`.
+
+## Time Limit
+**90 minutes** – Prioritize core functionality and visual accuracy.
+
+## Tech Stack
+- **Frontend:** Next.js 14+ (App Router) with Tailwind CSS
+- **Backend:** Python FastAPI
 
 ## Prerequisites
 
@@ -8,7 +16,9 @@ A fullstack application with a Python/FastAPI backend and Next.js frontend.
 - Node.js 20+
 - Docker & Docker Compose (for containerized setup)
 
-## Quick Start with Docker Compose
+## Setup
+
+### Quick Start with Docker Compose
 
 The easiest way to run the entire application:
 
@@ -27,10 +37,16 @@ This will start:
 - **Backend API** at http://localhost:8000
 - **Frontend** at http://localhost:3000
 
-## Running Backend Manually
+### Running Manually
 
-### Setup
+#### Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
+#### Backend
 ```bash
 cd backend
 
@@ -40,11 +56,16 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Start the server
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-### Database Migrations
+#### Database Migrations
 
 ```bash
+cd backend
+
 # Apply all migrations
 python migrate.py upgrade
 
@@ -55,39 +76,62 @@ python migrate.py downgrade
 python migrate.py list
 ```
 
-### Start the Server
+## Required Scope
 
-```bash
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
-```
+Build the following sections from `implementation.png`:
 
-The API will be available at http://localhost:8000
+### 1. Header
+- TaskBoard logo
+- Search bar (centered)
+- Notification icon, user avatar
 
-## Running Frontend Manually
+### 2. Left Sidebar
+- Workspace selector dropdown (OnPoint Studio)
+- "+ Add New" button (purple)
+- Navigation menu: Dashboard, Inbox (with badge), Teams, Analytics, Settings
+- Projects section with expandable tree structure
+- "Invite Team" and "Help" buttons at bottom
 
-### Setup
+### 3. Main Content Area
+- **Project header:** Title with edit icon, user avatars, Share & Automation buttons
+- **View tabs:** Overview, List, Board (active), Calendar, Files
+- **Filters bar:** Due Date, Assignee, Priority dropdowns, Advance Filters button, "+ Add New" button
 
-```bash
-cd frontend
+### 4. Kanban Board (Core Feature)
+Four columns with status indicators:
+- **Pending** (gray)
+- **In Progress** (yellow)
+- **Completed** (green)
+- **Launched** (purple)
 
-# Install dependencies
-npm install
-```
+Each task card should display:
+- Task title
+- Assignee avatar(s)
+- Due date
+- Priority flag (Normal/High)
 
-### Development Mode
+## API Requirements
 
-```bash
-npm run dev
-```
+Create REST endpoints to support:
+- `GET /tasks` – Fetch all tasks
+- `POST /tasks` – Create a new task
+- `PUT /tasks/{id}` – Update task (including status changes)
+- `DELETE /tasks/{id}` – Delete a task
 
-### Production Build
+## What NOT to Build
+- User authentication
+- Mobile/responsive layouts
+- Drag-and-drop functionality
+- Real-time updates
+- Settings, Analytics, or other secondary pages
 
-```bash
-# Build the application
-npm run build
+## Evaluation Criteria
 
-# Start production server
-npm start
-```
+| Category | Weight | Details |
+|----------|--------|---------|
+| **Visual Accuracy** | 40% | Match colors, typography, spacing, shadows, borders |
+| **Functionality** | 30% | CRUD operations work, data persists, UI updates correctly |
+| **Code Quality** | 20% | Clean component structure, proper API design, readable code |
+| **Layout & Structure** | 10% | Correct use of flex/grid, semantic HTML |
 
-The frontend will be available at http://localhost:3000
+Good luck!
