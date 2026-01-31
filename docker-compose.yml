@@ -4,7 +4,6 @@ services:
   api:
     build: 
       context: ./backend
-      dockerfile: Dockerfile.optimized
     ports:
       - "8000:8000"
     volumes:
@@ -31,7 +30,6 @@ services:
   frontend:
     build:
       context: ./frontend
-      dockerfile: Dockerfile.optimized
       args:
         - NODE_ENV=production
         - NEXT_TELEMETRY_DISABLED=1
