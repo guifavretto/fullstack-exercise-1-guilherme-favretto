@@ -1,7 +1,9 @@
 # Fullstack Developer Challenge: TaskBoard – Kanban Project Management
 
 ## Overview
-This is a timed coding exercise to evaluate your ability to build a fullstack application matching the provided design. Your task is to replicate the **TaskBoard** project management interface shown in `implementation.png`.
+This is a timed coding exercise to evaluate your ability to build a fullstack application matching the provided design. Your task is to replicate the **TaskBoard** project management interface shown below.
+
+![TaskBoard Implementation](implementation.png)
 
 ## Time Limit
 **90 minutes** – Prioritize core functionality and visual accuracy.
