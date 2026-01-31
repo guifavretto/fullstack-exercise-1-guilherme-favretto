@@ -36,7 +36,7 @@ class TaskResponse(BaseModel):
 # Sample data initialization
 SAMPLE_TASKS = [
     {
-        "id": str(uuid.uuid7()),
+        "id": str(uuid.uuid4()),
         "title": "Solutions Pages",
         "status": "pending",
         "assignees": ["user1", "user2"],
@@ -44,7 +44,7 @@ SAMPLE_TASKS = [
         "priority": "normal"
     },
     {
-        "id": str(uuid.uuid7()),
+        "id": str(uuid.uuid4()),
         "title": "Company Pages",
         "status": "pending",
         "assignees": ["user3"],
@@ -52,7 +52,7 @@ SAMPLE_TASKS = [
         "priority": "normal"
     },
     {
-        "id": str(uuid.uuid7()),
+        "id": str(uuid.uuid4()),
         "title": "Help Center Pages",
         "status": "pending",
         "assignees": ["user1"],
@@ -60,7 +60,7 @@ SAMPLE_TASKS = [
         "priority": "normal"
     },
     {
-        "id": str(uuid.uuid7()),
+        "id": str(uuid.uuid4()),
         "title": "Order Flow",
         "status": "in_progress",
         "assignees": ["user2", "user4"],
@@ -68,7 +68,7 @@ SAMPLE_TASKS = [
         "priority": "high"
     },
     {
-        "id": str(uuid.uuid7()),
+        "id": str(uuid.uuid4()),
         "title": "New Work Flow",
         "status": "in_progress",
         "assignees": ["user3"],
@@ -76,7 +76,7 @@ SAMPLE_TASKS = [
         "priority": "high"
     },
     {
-        "id": str(uuid.uuid7()),
+        "id": str(uuid.uuid4()),
         "title": "About Us Illustration",
         "status": "completed",
         "assignees": ["user1"],
@@ -84,7 +84,7 @@ SAMPLE_TASKS = [
         "priority": "normal"
     },
     {
-        "id": str(uuid.uuid7()),
+        "id": str(uuid.uuid4()),
         "title": "Hero Illustration",
         "status": "completed",
         "assignees": ["user2", "user5"],
@@ -92,7 +92,7 @@ SAMPLE_TASKS = [
         "priority": "normal"
     },
     {
-        "id": str(uuid.uuid7()),
+        "id": str(uuid.uuid4()),
         "title": "Moodboarding",
         "status": "completed",
         "assignees": ["user4"],
@@ -100,7 +100,7 @@ SAMPLE_TASKS = [
         "priority": "high"
     },
     {
-        "id": str(uuid.uuid7()),
+        "id": str(uuid.uuid4()),
         "title": "Research",
         "status": "completed",
         "assignees": ["user1", "user3"],
@@ -108,7 +108,7 @@ SAMPLE_TASKS = [
         "priority": "high"
     },
     {
-        "id": str(uuid.uuid7()),
+        "id": str(uuid.uuid4()),
         "title": "Features Pages",
         "status": "launched",
         "assignees": ["user5"],
@@ -135,7 +135,7 @@ def create_task(task: TaskCreate):
     Create a new task.
     """
     new_task = {
-        "id": str(uuid.uuid7()),
+        "id": str(uuid.uuid4()),
         "title": task.title,
         "status": task.status,
         "assignees": task.assignees,
